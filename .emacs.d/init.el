@@ -1,5 +1,9 @@
 ;; main entry for emacs configuration
 
+;; environment detection helpers
+(setq on-windows (eq 'windows-nt system-type))
+(setq on-mac (eq 'darwin system-type))
+
 ;; enable backtrace on error
 ;; (setq debug-on-error t)
 
@@ -50,16 +54,20 @@
 ;; show parens
 (show-paren-mode 1)
 
+;; fonts
+(if on-mac (set-frame-font "Menlo 12"))
+
 ;; org mode
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
-(setq debug-on-error t)
+;;(setq debug-on-error t)
 
 ;; proxy settings
+(if on-windows
 (setq url-proxy-services '(("http" . "localhost:3128" )
-			   ))
+			   )) )
 
 ;; package manager
 (add-to-list 'load-path "~/.emacs.d")

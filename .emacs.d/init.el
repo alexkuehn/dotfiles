@@ -56,6 +56,11 @@
 
 ;; fonts
 (if on-mac (set-frame-font "Menlo 12"))
+;; mac key mapping
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
 
 ;; org mode
 (require 'org)

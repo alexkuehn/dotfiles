@@ -5,11 +5,7 @@
 (setq on-mac (eq 'darwin system-type))
 
 ;; enable backtrace on error
-;; (setq debug-on-error t)
-
-;; load colorscheme and set colors
-(load-theme 'wombat)
-(set-cursor-color "orange")
+(setq debug-on-error t)
 
 ;; shorten yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -57,6 +53,12 @@
 ;; fonts
 (if on-mac (set-frame-font "Menlo 12"))
 
+;; Mac Keyboard
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+
 ;; org mode
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
@@ -73,6 +75,17 @@
 (add-to-list 'load-path "~/.emacs.d")
 (load "packages")
 
+;; load colorscheme and set colors
+(require 'molokai-theme)
+(load-theme 'molokai)
+(set-cursor-color "orange")
+
 ;; powerline
 (require 'powerline)
 (powerline-default-theme)
+
+;;AuCTex
+(require 'tex)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)

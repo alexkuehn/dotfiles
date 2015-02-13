@@ -5,7 +5,7 @@
 (setq on-mac (eq 'darwin system-type))
 
 ;; enable backtrace on error
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 
 ;; shorten yes or no
 (fset 'yes-or-no-p 'y-or-n-p)

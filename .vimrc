@@ -25,7 +25,7 @@ set incsearch
 
 set termencoding=utf-8
 set encoding=utf-8
-set lasstatus=2
+set laststatus=2
 set hidden
 set switchbuf=useopen
 set nobackup

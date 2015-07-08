@@ -3,6 +3,7 @@
 ;; environment detection helpers
 (setq on-windows (eq 'windows-nt system-type))
 (setq on-mac (eq 'darwin system-type))
+(setq on-cygwin (eq 'cygwin system-type))
 
 ;; enable backtrace on error
 ;; (setq debug-on-error t)
@@ -75,9 +76,13 @@
 (if on-windows
 (setq url-proxy-services '(("http" . "localhost:3128" )
 			   )) )
+(if on-cygwin
+(setq url-proxy-services '(("http" . "localhost:10000" )
+			   )) )
+
 
 ;; package manager
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (load "packages")
 
 ;; load colorscheme and set colors

@@ -1,3 +1,4 @@
+
 ;; main entry for emacs configuration
 
 ;; environment detection helpers
@@ -40,6 +41,9 @@
 ;; outsource custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
+
+;; buffer config
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; line wrapping
 (set-default 'fill-column 128)

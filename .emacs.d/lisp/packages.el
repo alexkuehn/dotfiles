@@ -7,7 +7,7 @@
   (package-refresh-contents))
 
 (defvar required-packages
-  '(powerline yasnippet auctex molokai-theme)
+  '(powerline yasnippet auctex monokai-theme)
   "Packages which should be installed")
 
 (dolist (p required-packages)

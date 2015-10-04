@@ -90,8 +90,8 @@
 (load "packages")
 
 ;; load colorscheme and set colors
-(require 'molokai-theme)
-(load-theme 'molokai)
+(require 'monokai-theme)
+(load-theme 'monokai)
 (set-cursor-color "orange")
 
 ;; powerline

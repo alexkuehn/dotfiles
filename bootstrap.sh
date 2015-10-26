@@ -5,5 +5,6 @@ cd "$(dirname "${BASH_SOURCE}")";
 # git pull origin master;
 
 rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-	--exclude "README.md" -avh --no-perms . ~;
+	  --exclude "README.md" --exclude ".emacs.d/elpa" --exclude ".emacs.d/auto-save-list" \
+      -avh --no-perms . ~;
 

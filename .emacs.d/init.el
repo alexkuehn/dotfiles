@@ -103,3 +103,11 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
+
+;; YASnippet
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"           ;; default collection
+        "~/.emacs.d/mysnippets"         ;; my snippets
+        ))
+(yas-global-mode 1)

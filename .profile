@@ -22,7 +22,7 @@ fi
 
 export PATH="$HOME/bin:$PATH"
 
-if [ "$(uname -o)" == "Cygwin" ]
+if [ "$(uname -s)" == "Cygwin" ]
 then
     export http_proxy="http://localhost:3128"
     export https_proxy="http://localhost:3128"

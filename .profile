@@ -37,4 +37,4 @@ then
 fi
 
 
-alias ls='ls --color'
+

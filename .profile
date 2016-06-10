@@ -9,7 +9,7 @@ fi
 # Finished adapting your PATH environment variable for use with MacPorts.
 if [ "$(uname -s)" == "Darwin" ]
 then
-    alias Emacs='open -a /Applications/Emacs.app/ $1'
+    alias Emacs='open -a Emacs.app $1'
 else
     alias Emacs='emacs $1'
 fi
@@ -17,10 +17,18 @@ fi
 if [ "$(uname -s)" == "Darwin" ]
 then
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+    export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 fi
 
 
 export PATH="$HOME/bin:$PATH"
+export CLICOLOR=1
+
+if [[ -f /usr/bin/dircolors && -f $HOME/.dircolors ]]; then
+    eval $(dircolors -b $HOME/.dircolors)
+fi
+
+ls --color=auto &> /dev/null && alias ls="ls --color=auto"
 
 if [ "$(uname -s)" == "Cygwin" ]
 then
@@ -28,3 +36,5 @@ then
     export https_proxy="http://localhost:3128"
 fi
 
+
+alias ls='ls --color'

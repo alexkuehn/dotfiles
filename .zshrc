@@ -25,7 +25,7 @@ HISTFILE=~/.zsh_histfile
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-prompt adam1
+prompt clint
 
 setopt menu_complete
 zmodload zsh/complist  # TODO: is this important?
@@ -43,8 +43,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/s
 zstyle ':completion:*' menu select=1
 setopt auto_menu
 unsetopt menu_complete
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegeadabagaced
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='3;33'
 

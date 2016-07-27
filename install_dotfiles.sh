@@ -35,6 +35,9 @@ install_dotfiles() {
     do
       local destfile="$HOME/$(basename "$srcfile")"
       info "$destfile  -> $srcfile"
+      if [ -d "$destfile" ]; then
+	  rm -rf $destfile
+      fi
       ln -s -f "$srcfile" "$destfile"
      
     done

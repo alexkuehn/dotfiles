@@ -7,7 +7,8 @@
   (package-refresh-contents))
 
 (defvar required-packages
-  '(powerline yasnippet auctex monokai-theme)
+  '(powerline yasnippet auctex monokai-theme beacon markdown-mode elpy magit projectile
+    clojure-mode cider)
   "Packages which should be installed")
 
 (dolist (p required-packages)

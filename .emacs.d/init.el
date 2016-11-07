@@ -111,3 +111,7 @@
         "~/.emacs.d/mysnippets"         ;; my snippets
         ))
 (yas-global-mode 1)
+
+;; Beacon mode
+(require 'beacon)
+(beacon-mode 1)

@@ -69,6 +69,9 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
 
+;; IDO mode
+(ido-mode 1)
+
 ;; org mode
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
@@ -115,3 +118,20 @@
 ;; Beacon mode
 (require 'beacon)
 (beacon-mode 1)
+
+;; smex
+(require 'smex)
+(smex-initialize)
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+
+;; neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+;; rainbow-delimiters
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)

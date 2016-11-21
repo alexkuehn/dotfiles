@@ -127,7 +127,6 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-
 ;; neotree
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
@@ -135,3 +134,13 @@
 ;; rainbow-delimiters
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+;; w3m
+(require 'w3m)
+
+;; SuperCollider
+(add-to-list 'load-path "~/.emacs.d/scel")
+(require 'sclang)
+(setq sclang-program "/Applications/SuperCollider.app/Contents/MacOS/sclang")
+(setq sclang-osx-app-path "/Applications/SuperCollider.app")
+(add-hook 'sclang-mode-hook 'sclang-extensions-mode)

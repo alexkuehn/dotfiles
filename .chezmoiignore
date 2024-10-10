@@ -1,0 +1,8 @@
+README.md
+**/auto-save-list/
+**/auto-save-list/**/*
+**/eln-cache/
+**/eln-cache/**/*
+**/elpa/
+**/elpa/**/*
+*~

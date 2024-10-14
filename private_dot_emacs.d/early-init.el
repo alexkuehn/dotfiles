@@ -4,14 +4,19 @@
 
 ;;; Code:
 
+
+;; settings for better startup performance
+(setq orig-initial-gc-threshold gc-cons-threshold)
+(setq gc-cons-threshold 10000000)
+(setq byte-compile-warnings '(not obsolete))
+(setq warning-suppress-log-types '((comp) (bytecomp)))
+(setq native-comp-async-report-warnings-errors 'silent)
+
+;; silence startup message
+(setq inhibit-startup-echo-area-message (user-login-name))
+
+
 ;; Disable GUI
 (tool-bar-mode -1)
-(setq use-dialog-box t)
-(setq use-file-dialog nil)
-(setq-default frame-title-format '("%b  -  GNU Emacs"))
-;; Hide the startup screen
-(setq inhibit-startup-screen t)
-;; Increase font size
-;; (set-face-attribute 'default nil :height 130)
 
 ;;; early-init.el ends here

@@ -100,20 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export DB_HOST=localhost
-export DB_USER=swatdb
-export DB_PASS='swatdb42'
-export DB_PORT=3306
-export DB_NAME='Rel3.0_L2Plus'
-export GIT_REPO_PATH="~/prj/swat/swat-db"
-export SWAT_DB_TOOLS_PATH="~/prj/swat/swat-db-tools"
-if [ -z "${PYTHONPATH}" ]; then
-    export PYTHONPATH="${SWAT_DB_TOOLS_PATH}"
-else
-    export PYTHONPATH="${PYTHONPATH}:${SWAT_DB_TOOLS_PATH}"
-fi
-
-export ESRLABS_LICENSE_FILE=$HOME/.esr/esr_flexlm.lic
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

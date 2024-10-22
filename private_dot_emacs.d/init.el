@@ -5,15 +5,12 @@
   (load (concat user-emacs-directory "early-init.el")))
 
 
-;; switch off splash screen
+;; switch off unused UI elements and clutter
 (setq inhibit-splash-screen t)
-(prefer-coding-system 'utf-8)
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message "")
 
-(setq initial-major-mode 'fundamental-mode)  ; default mode for the *scratch* buffer
-
-
-;; Fix archaic defaults
-(setq sentence-end-double-space nil)
+(setq ring-bell-function 'ignore)
 
 
 ;; Don't litter file system with *~ backup files; put them all inside
@@ -40,27 +37,29 @@ If the new path's directories does not exist, create them."
 (require 'use-package)
 
 
-(setq line-number-mode t)                        ; Show current line in modeline
-(setq column-number-mode t)                      ; Show column as well
 
-(setq x-underline-at-descent-line nil)           ; Prettier underlines
+(setq initial-major-mode 'fundamental-mode)  ; default mode for the *scratch* buffer
 
+;; text layout
 
+(setq sentence-end-double-space nil)
 (setq show-trailing-whitespace nil)      ; By default, don't underline trailing spaces
 (setq indicate-buffer-boundaries 'left)  ; Show buffer top and bottom in the margin
 
-;; Enable horizontal scrolling
-(setq mouse-wheel-tilt-scroll t)
-(setq mouse-wheel-flip-direction t)
 
+; coding
+(prefer-coding-system 'utf-8)
 
 
 ; TAB config
 (setq indent-tabs-mode nil)
 (setq tab-width 4)
 
-(setq ring-bell-function 'ignore)
 
+
+;; line number config
+(setq line-number-mode t)                        ; Show current line in modeline
+(setq column-number-mode t)                      ; Show column as well
 
 ;; Display line numbers in programming mode
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
@@ -68,9 +67,6 @@ If the new path's directories does not exist, create them."
 ;; Nice line wrapping when working with text
 (add-hook 'text-mode-hook 'visual-line-mode)
 
-;; Modes to highlight the current line with
-;;(let ((hl-line-hooks '(text-mode-hook prog-mode-hook)))
-;;  (mapc (lambda (hook) (add-hook hook 'hl-line-mode)) hl-line-hooks))
 
 ;; respect customize files
 (setq custom-file (concat user-emacs-directory "customizations.el"))
